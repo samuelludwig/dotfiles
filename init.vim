@@ -32,10 +32,12 @@ set runtimepath^=~/.vim/pack/git-plugins/start/
 set number relativenumber
 
 call plug#begin('~/.local/share/nvim')
+Plug 'sheerun/vim-polyglot'
 Plug 'vimwiki/vimwiki'
 Plug 'morhetz/gruvbox'
 call plug#end()
 
+"Vimwiki Settings
 let g:vimwiki_auto_header=1
 
 nmap <Leader>we <Plug>VimwikiSplitLink
@@ -45,4 +47,3 @@ nmap <Leader>wq <Plug>VimwikiVSplitLink
 autocmd vimenter * colorscheme gruvbox
 
 "Automations
-au BufNewFile ~/vimwiki/diary/*.wiki :silent 0r !~/.config/nvim/bin/generate-vimwiki-diary-template '%'
